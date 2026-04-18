@@ -1,3 +1,4 @@
+<img width="400" height="225" alt="image" src="https://github.com/user-attachments/assets/160fa5ed-b953-4844-8e96-d01eaab322ae" />
 # YAS OBFUSCATOR | Roblox LuaU Script Protection
 
 The most advanced LuaU obfuscator for Roblox scripts. Protect your code with YAS.
