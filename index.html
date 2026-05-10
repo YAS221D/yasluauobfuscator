@@ -3,76 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAS OBFUSCATOR | Roblox LuaU Script Protection</title>
-    <meta name="description" content="The most advanced LuaU obfuscator for Roblox scripts. Protect your code with YAS.">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10 15 L50 5 L90 15 L90 50 C90 80 50 95 50 95 C50 95 10 80 10 50 Z' fill='black' stroke='white' stroke-width='5'/%3E%3Ctext x='50' y='58' font-family='sans-serif' font-size='28' font-weight='900' fill='white' text-anchor='middle'%3EYAS%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for premium typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>YAS OBFUSCATOR</title>
+    <style>
+        :root {
+            --primary: #ffffff;
+            --background: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--primary);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-logo {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: introFadeIn 1s forwards 0.2s;
+        }
+
+        .yas {
+            color: var(--primary);
+        }
+
+        .obfuscator {
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .intro-line {
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            margin-top: 1rem;
+            animation: lineExtend 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.5s;
+        }
+
+        @keyframes introFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineExtend {
+            to {
+                width: 150px;
+            }
+        }
+    </style>
 </head>
-<body oncontextmenu="return false;">
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+<body>
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay">
+        <div class="intro-logo">
+            <span class="yas">YAS</span><span class="obfuscator">OBFUSCATOR</span>
+        </div>
+        <div class="intro-line"></div>
     </div>
 
-    <nav class="glass">
-        <div class="logo">
-            <span class="yas">YAS</span> <span class="obfuscator">OBFUSCATOR</span>
-            <div class="subtitle">By yas221d.github.io/yasluauobfuscator/</div>
-        </div>
-        <div class="nav-links">
-            <a href="#" class="active">Secure</a>
-            <a href="#">Pricing</a>
-            <a href="#">Documentation</a>
-        </div>
-    </nav>
-
-    <main>
-        <div class="container glass">
-            <header class="hero">
-                <div class="big-yas">YAS</div>
-                <h1>Protect Your Scripts</h1>
-                <p>Premium LuaU obfuscation powered by yas221d.github.io/yasluauobfuscator/</p>
-            </header>
-
-            <div class="editor-section">
-                <div class="editor-wrapper group">
-                    <div class="label">Game Name</div>
-                    <input type="text" id="game-name" placeholder="Enter game name here..." spellcheck="false" />
-                </div>
-
-                <div class="editor-wrapper group">
-                    <div class="label">Input Script (LuaU)</div>
-                    <textarea id="input-script" spellcheck="false" placeholder="-- Paste your code here...&#10;print('Hello, world!')"></textarea>
-                </div>
-
-                <div class="actions">
-                    <button id="obfuscate-btn" class="primary-btn">
-                        <span class="btn-text">Obfuscate Now</span>
-                    </button>
-                </div>
-
-                <div class="editor-wrapper group">
-                    <div class="label">Obfuscated Output</div>
-                    <textarea id="output-script" spellcheck="false" readonly placeholder="Output will appear here..."></textarea>
-                    <div class="copy-float" id="copy-btn">Copy to Clipboard</div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Custom Context Menu -->
-    <div id="custom-menu" class="glass hidden">
-        <div class="menu-item" id="menu-copy">Copy Selection</div>
-        <div class="menu-item" id="menu-paste">Paste From Clipboard</div>
-    </div>
-
-
-    <!-- Notification Toast -->
-    <div id="toast-container"></div>
-
-    <script src="script.js"></script>
+    <script>
+        // Redirect after the intro animation finishes
+        setTimeout(() => {
+            window.location.href = "https://yasluauobfuscator.netlify.app/";
+        }, 2500);
+    </script>
 </body>
 </html>
